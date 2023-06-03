@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 DOM</title>
+</head>
+<style>
+    /* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<body>
+    <div class="header">
+        <h1>ESTRUCTURAS DE CONTROL & DOM</h1>
+        <h2>Ejercicio 4</h2>
+    </div>
+<!-- //* Crear una función que en base a 2 números enteros que ingrese el usuario, 
+    calcular cual número es el mayor y devolverlo. *// -->
+
+    <h3>Identify which of the two numbers is greater.</h3>
+
+    <label for="">Enter the first number</label>
+    <input type="text" id = Nbrone> <br>
+
+    <label for="">Enter the second number</label>
+    <input type="text" id = Nbrtwo> <br>
+    <button id = "calculate"> Calculate Now</button>
+<p></p>
+
+    <footer>
+        <p class="text-center"> MA Moran FJS12</p>
+      </footer>
+</body>
+<script>
+ const Nbrone = document.querySelector ('#Nbrone');
+ const Nbrtwo = document.querySelector ( '#Nbrtwo');
+ let calculate = document.querySelector ('#calculate');
+ let paragraph = document.querySelector ('p');
+
+ calculate.addEventListener ('click', () =>{
+    let NbrG = Math.max(Number(Nbrone.value), Number(Nbrtwo.value));
+    paragraph.textContent = "The greater number is " + NbrG;
+ }
+ )
+</script>
+</html>
