@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7 DOM</title>
+</head>
+<style>
+    /* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<body>
+    <div class="header">
+        <h1>ESTRUCTURAS DE CONTROL & DOM</h1>
+        <h2>Ejercicio 7</h2>
+    </div>
+<!-- //* Realizar programa para una web, en el cual el usuario introduce 2 notas y su valor
+ponderado (como cuando un examen vale un 30% y otro examen el 70%). Pulsando el
+botón “Calcula”, la web muestra como resultado la nota media ponderada. *// -->
+
+<h3> Scores Calculator</h3>
+<label for="">Score One</label>
+<input type="number" id = "ScrOne"><br> <br>
+
+<label for="">Percentage Score One</label>
+<input type="number" id = "VlOne"><br> <br>
+
+<label for="">Score Two</label>
+<input type="number" id = "ScrTwo"> <br> <br>
+
+<label for="">Percentage Score 2</label>
+<input type="number" id = "VlTwo"> <br> <br>
+<button onclick="generateAverage()">Calculate Average</button>
+<br> <br>
+<p></p>
+
+    <footer>
+        <p class="text-center"> MA Moran FJS12</p>
+      </footer>
+</body>
+<script>
+function generateAverage() {
+    let ScrOne = parseFloat(document.getElementById("ScrOne").value);
+    let ScrTwo = parseFloat(document.getElementById("ScrTwo").value);
+    let VlOne = parseFloat(document.getElementById("VlOne").value);
+    let VlTwo = parseFloat(document.getElementById("VlTwo").value);
+    let average= 0.0;
+    let paragraph = document.querySelector('p');
+
+    average = ((ScrOne * VlOne / 100) + (ScrTwo * VlTwo / 100)).toFixed(2);
+    paragraph.textContent = "The average Score is " + average;
+}
+</script>
+</html>
