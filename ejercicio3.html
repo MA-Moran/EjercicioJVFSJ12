@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 DOM</title>
+</head>
+<style>
+    /* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<body>
+    <div class="header">
+        <h1>ESTRUCTURAS DE CONTROL & DOM</h1>
+        <h2>Ejercicio 3</h2>
+    </div>
+     <!-- CATEGORIA AUMENTO 
+    A - 15%
+    B - 30%
+    C - 10%
+    D - 20%
+   //* Calcular el aumento de trabajador tomando en cuenta la tabla de categorías de aumento. 
+    Para este ejercicio deberá de asignar las siguientes variables: Nombre, Salario, categoría y aumento. 
+    Deberá demostrar en html los datos del empleado y el aumento salarial. *// -->
+
+    <h3>Register Employee</h3>
+    <label for="">Enter Name</label>
+    <input type="text" id="name"><br>
+
+    <label for="">Enter Salary</label>
+    <input type="text" id="salary"><br>
+
+    <label for="">Enter category of increase</label>
+    <select id="increase">
+        <option value="">Select a category of increase</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select> <br>
+    <button class="calculate"> Calculate new salary</button>
+    <p></p>
+
+    <footer>
+        <p class="text-center"> MA Moran FJS12</p>
+      </footer>
+</body>
+<script>
+
+let calculate = document.querySelector('.calculate');
+let salary = document.getElementById('salary');
+let name = document.querySelector('#name');
+let increase = document.getElementById("increase");
+let paragraph = document.querySelector('p')
+
+calculate.addEventListener('click', () => {
+    switch (increase.value){
+        case "A":
+            var increaseA = Number(salary.value) * 0.15;
+            var FincreaseA = increaseA + Number(salary.value);
+            paragraph.textContent = "The Employee " + name.value + 
+            " that is in the increase category " + increase.value +
+            " with a current salry of " + salary.value +
+            " will have a salary increase of 15% which will make their " +
+            " new salary : $ " + FincreaseA;
+        break;
+        case "B":
+            var increaseB = Number(salary.value) * 0.30;
+            var FincreaseB = increaseB + Number(salary.value);
+            paragraph.textContent = "The Employee " + name.value + 
+            " that is in the increase category " + increase.value +
+            " with a current salry of " + salary.value +
+            " will have a salary increase of 30% which will make their " +
+            " new salary : $ " + FincreaseB;
+        break;
+        case "C":
+            var increaseC = Number(salary.value) * 0.10;
+            var FincreaseC = increaseC + Number(salary.value);
+            paragraph.textContent = "The Employee " + name.value + 
+            " that is in the increase category " + increase.value +
+            " with a current salry of " + salary.value +
+            " will have a salary increase of 10% which will make their " +
+            " new salary : $ " + FincreaseC;
+        break;
+        case "D":
+            var increaseD = Number(salary.value) * 0.20;
+            var FincreaseD = increaseD + Number(salary.value);
+            paragraph.textContent = "The Employee " + name.value + 
+            " that is in the increase category " + increase.value +
+            " with a current salry of " + salary.value +
+            " will have a salary increase of 20% which will make their " +
+            " new salary : $ " + FincreaseD;
+      break;
+      default:
+        break;
+
+     }
+})
+</script>
+</html>
