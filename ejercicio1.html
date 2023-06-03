@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 DOM</title>
+</head>
+<style>
+    /* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<body>
+<div class="header">
+    <h1>ESTRUCTURAS DE CONTROL & DOM</h1>
+    <h2>Ejercicio 1</h2>
+</div>
+
+/// Crear una función que en base a la edad que ingreso el usuario devolver un mensaje si la
+    persona es mayor de edad o no. Utilizar para la condición el operador ternario.///
+
+    <h2> Calculate your age </h2>
+    <label for="">Enter your age: </label>
+    <input type="text" id="age">
+    <button onclick="calculate()">Calculate now</button>
+    <p></p>
+    
+
+<footer>
+  <p class="text-center"> MA Moran FJS12</p>
+</footer>
+</body>
+
+<script>
+ const nOne = document.querySelector('#age');
+  let parrafo = document.querySelector('p');
+    function calculate() {
+    legal = (Number(nOne.value >= 18)) ? " legal" : " minor";
+    parrafo.textContent = "The Person is of " + legal + " age";
+        }
+</script>
+</html>
