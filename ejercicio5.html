@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 DOM</title>
+</head>
+<style>
+    /* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<body>
+    <div class="header">
+        <h1>ESTRUCTURAS DE CONTROL & DOM</h1>
+        <h2>Ejercicio 5</h2>
+    </div>
+    <!-- // Realizar una función para una tienda de coches en donde se deberá calcular: Si el coche a
+    la venta es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el coche a la
+    venta es un FORD FOCUS, el descuento será del 10% y si es un FORD ESCAPE el descuento
+    será del 20%. Mostrar en html el coche seleccionado y el descuento que se aplicara en base
+    a lo que selecciono el usuario. // -->
+
+    <h3>"FORD" Car Dealership - Discount Information</h3>
+    <label for="">Select the vehicle to sell </label>
+    <select id="type">
+    <option value="">Select the model </option>
+    <option value="FORD-fiesta">FORD Fiesta</option>
+    <option value="FORD-focus">FORD Focus</option>
+    <option value="FORD-escape">FORD Escape</option>
+</select> <br>
+<button class="send">Send Information</button> <br>
+<p></p>
+
+    <footer>
+        <p class="text-center"> MA Moran FJS12</p>
+      </footer>
+</body>
+<script>
+    let type = document.getElementById ("type");
+    let send = document.querySelector ('.send');
+    let paragraph = document.querySelector ('p');
+
+    send.addEventListener ('click', () => {
+        switch (type.value){
+            case 'FORD-fiesta':
+                paragraph.textContent = "You have selected the " + type.value + " Apply a discount of 5% to the total value of the vehicle.";
+        break;
+            case 'FORD-focus':
+                paragraph.textContent = "You have selected the " + type.value + " Apply a discount of 10% to the total value of the vehicle.";
+        break;
+            case 'FORD-escape':
+                paragraph.textContent = "You have selected the " + type.value + " Apply a discount of 20% to the total value of the vehicle.";
+        break;
+        default:
+        break;
+            }
+    })
+</script>
+</html>
