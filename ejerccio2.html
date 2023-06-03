@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 DOM</title>
+</head>
+<style>
+    /* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<body>
+    <div class="header">
+        <h1>ESTRUCTURAS DE CONTROL & DOM</h1>
+        <h2>Ejercicio 2</h2>
+    </div>
+<!-- //Crear una función que determine la nota final de un alumno, la cual depende de lo siguiente:
+Examen =20%
+tareas = 40%
+asistencia = 10%
+investigación = 30%
+Al final deberá mostrar los datos del alumno, nombre, carnet y nota final.// -->
+
+<h3>Register Student</h3>
+<label for="">Enter Name</label>
+<input type="text" id="name"> <br>
+
+<label for="">Enter ID card</label>
+<input type="text" id="card"> <br>
+
+<label for="">Enter Exam Score</label>
+<input type="text" id="exam"> <br>
+
+<label for="">Enter Homework's Scores</label>
+<input type="text" id="Hwork"> <br>
+
+<label for="">Enter Student Attendance</label>
+<input type="text" id="attendance"> <br>
+
+<label for="">Enter Research Project Score</label>
+<input type="text" id="research"> <br>
+<button onclick="calculate ()"> Calculate now</button>
+
+<p></p>
+
+    <footer>
+        <p class="text-center"> MA Moran FJS12</p>
+      </footer>
+</body>
+<script>
+ let name = document.getElementById('name');
+ let card = document.getElementById('card');
+ const exam = document.querySelector('#exam');
+ const Hwork = document.querySelector('#Hwork');
+ const attendance = document.querySelector('#attendance');
+ const research = document.querySelector('#research');
+ let paragraph = document.querySelector('p');
+
+ function calculate() {
+   let scores = Number(exam.value) *0.20 + Number(Hwork.value) *0.40 + Number(attendance.value) * 0.10 + Number(research.value) * 0.30;
+   paragraph.textContent = "The student : " + name.value + " with ID Card " + card.value + " has a final score of: " + scores;
+  }   
+</script>
+</html>
