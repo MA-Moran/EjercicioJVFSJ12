@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6 DOM</title>
+</head>
+<style>
+    /* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<body>
+    <div class="header">
+        <h1>ESTRUCTURAS DE CONTROL & DOM</h1>
+        <h2>Ejercicio 6</h2>
+    </div>
+<!-- //* Crear una Función para calcular el descuento en viajes turísticos tomando en cuenta lo
+siguiente:
+Si el usuario introduce como origen la ciudad de Palma y como destino La costa del Sol, el
+descuento será de 5%, si el destino es Panchimalco el descuento será del 10% y si el destino
+es Puerto el Triunfo el descuento será del 15%. *// -->
+
+<h3>Travel Agency - Discount Information</h3>
+<label for="">From ? </label>
+<select id="origin">
+ <option value="">Select an option</option>
+ <option value="La-Palma">La Palma</option>
+</select>
+<br>
+<label for=""> To ?</label>
+<select id="destination">
+    <option value="">Select an option</option>
+    <option value="La-Costa">La Costa del Sol</option>
+    <option value="Panchimalco">Panchimalco</option>
+    <option value="El-Triunfo">Puerto El Triunfo</option>
+    <option value="places"> Ask for other destinations</option>
+</select>
+<br>
+<button onclick="discount()"> Send Now </button>
+<br>
+<p></p>
+
+    <footer>
+        <p class="text-center"> MA Moran FJS12</p>
+      </footer>
+</body>
+<script>
+ let origin = document.getElementById ("origin");
+ let destination = document.getElementById ("destination");
+ let paragraph = document.querySelector ('p');
+
+ function discount() {
+    if (origin.value === 'La-Palma' && destination.value === 'La-Costa') {
+        paragraph.textContent = "The Discount to apply is 5%";
+    } else if (origin.value === 'La-Palma' && destination.value === 'Panchimalco') {
+        paragraph.textContent = "The Discount to apply is 10%";
+    } else if (origin.value === 'La-Palma' && destination.value === 'El-Triunfo') {
+        paragraph.textContent = "The discount to apply is 15%";
+    } else {
+        paragraph.textContent = "Call us! "
+    }
+}
+</script>
+</html>
